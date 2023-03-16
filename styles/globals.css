@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "sans", sans-serif;
+  src: url("../public/GentiumBookBasic-Italic.ttf");
+}
+
+/* Scroll bar */
+
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #E2E8F0;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: red;
+  }
