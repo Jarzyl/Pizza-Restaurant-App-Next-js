@@ -2,50 +2,9 @@ import NavDev from '@/components/NavDev'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import Link from 'next/link';
-import { FormDataContext } from '../components/FormDataContext';
-import { useContext } from 'react';
-import { CartContext } from '@/pages/CartContext';
 import Footer from '@/components/Footer';
 
-
 export default function Delivery() {
-
-  const cart = useContext(CartContext);
-
-  const checkout = async () => {
-    await fetch('http://localhost:4000/checkout', {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({items: cart.items})
-    }).then((response) => {
-        return response.json();
-    }).then((response) => {
-        if(response.url) {
-            window.location.assign(response.url); // Forwarding user to Stripe
-        }
-    });
-}
-
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    address: '',
-    phoneNumber: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    // add code to submit data or move to next page
-    
-  };
 
   return (
     <>
@@ -56,11 +15,10 @@ export default function Delivery() {
         <link rel="icon" type='png' href="/img/icon.png" />
       </Head>
       <NavDev/>
-      <FormDataContext.Provider value={{ formData, setFormData }}>
     <section id='delivery' className='mt-12 pt-10  items-center justify-center mb-10 md:h-screen'>
     <div className="max-w-md mx-auto my-4 p-4 bg-red-500 rounded-md shadow-md">
       <h1 className="text-lg font-medium mb-4">Delivery Information</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="mb-4">
           <label htmlFor="firstName" className="block font-medium mb-1">
             First Name
@@ -69,8 +27,7 @@ export default function Delivery() {
             type="text"
             id="firstName"
             name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
+          
             required
             className="block w-full p-2 border rounded-md"
           />
@@ -83,8 +40,7 @@ export default function Delivery() {
             type="text"
             id="lastName"
             name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
+            
             required
             className="block w-full p-2 border rounded-md"
           />
@@ -97,8 +53,7 @@ export default function Delivery() {
             type="number"
             id="phoneNumber"
             name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
+            
             required
             className="block w-full p-2 border rounded-md"
           />
@@ -111,15 +66,14 @@ export default function Delivery() {
             type='text'
             id="address"
             name="address"
-            value={formData.address}
-            onChange={handleChange}
+            
             required
             className="block w-full p-2 border rounded-md"
           />
         </div>
         <div className="flex justify-end">
           <button
-            type="submit" onClick={checkout}
+            type="submit" 
             className="bg-gray-500 text-white mr-5 py-2 px-4 rounded-md"
           >
             Pay
@@ -133,7 +87,6 @@ export default function Delivery() {
       </form>
     </div>
     </section>
-    </FormDataContext.Provider>
     <Footer/>
     </>
   )

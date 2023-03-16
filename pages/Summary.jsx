@@ -1,10 +1,5 @@
 import Footer from '@/components/Footer';
-import { useContext } from 'react';
-import { FormDataContext } from '../components/FormDataContext';
-
-
 export default function Summary() {
-//   const { formData } = useContext(FormDataContext);
 
   return (
     <>

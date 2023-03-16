@@ -1,7 +1,7 @@
 import React from 'react';
 import { PizzaArray } from '@/components/products';
 import Image from 'next/image';
-import Cart from '@/pages/Cart';
+import Cart from '@/components/Cart';
 
 function Menu() {
   return (

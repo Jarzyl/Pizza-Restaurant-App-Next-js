@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { TfiShoppingCart } from 'react-icons/tfi'
 import { AiOutlineClose } from 'react-icons/ai'
-import { CartContext } from '@/pages/CartContext';
-import CartProduct from "../pages/CartProduct";
+import { CartContext } from '@/components/CartContext';
+import CartProduct from "./CartProduct";
 import Link from "next/link";
 
 export default function Modal() {
