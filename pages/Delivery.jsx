@@ -1,10 +1,32 @@
 import NavDev from '@/components/NavDev'
 import Head from 'next/head'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import axios from 'axios';
+import getStripe from '@/get-stripe';
+import { CartContext } from '@/components/CartContext';
+
 
 export default function Delivery() {
+
+  const cart = useContext(CartContext);
+
+  const redirectToCheckout = async () => {
+    // Create Stripe checkout
+    const {
+      data: { id },
+    } = await axios.post('/api/checkout_sessions', {
+      items: Object.entries(cart.items).map(([_, { id, quantity }]) => ({
+        price: id,
+        quantity,
+      })),
+    });
+
+    // Redirect to checkout
+    const stripe = await getStripe();
+    await stripe.redirectToCheckout({ sessionId: id });
+  };
 
   return (
     <>
@@ -73,7 +95,7 @@ export default function Delivery() {
         </div>
         <div className="flex justify-end">
           <button
-            type="submit" 
+            type="submit" onClick={redirectToCheckout}
             className="bg-gray-500 text-white mr-5 py-2 px-4 rounded-md"
           >
             Pay
