@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useRef } from 'react';
-import { isClient } from '@/lib/utils';
+import { isClient } from '@/utils';
 
 const useLocalStorageReducer = (key = '', reducer, initialValue = null) => {
   const [state, dispatch] = useReducer(reducer, initialValue, () => {
