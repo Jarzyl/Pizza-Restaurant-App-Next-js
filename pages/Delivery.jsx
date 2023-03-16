@@ -1,23 +1,19 @@
 import NavDev from '@/components/NavDev'
 import Head from 'next/head'
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import axios from 'axios';
 import getStripe from '@/get-stripe';
-import { CartContext } from '@/components/CartContext';
-
 
 export default function Delivery() {
-
-  const cart = useContext(CartContext);
 
   const redirectToCheckout = async () => {
     // Create Stripe checkout
     const {
       data: { id },
     } = await axios.post('/api/checkout_sessions', {
-      items: Object.entries(cart.items).map(([_, { id, quantity }]) => ({
+      items: Object.entries(cartDetails).map(([_, { id, quantity }]) => ({
         price: id,
         quantity,
       })),
