@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FormDataContext } from './FormDataContext';
+import { FormDataContext } from '../components/FormDataContext';
 
 export default function FormDataContextProvider({ children }) {
   const [formData, setFormData] = useState({});

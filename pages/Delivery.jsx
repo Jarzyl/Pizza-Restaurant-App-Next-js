@@ -2,7 +2,7 @@ import NavDev from '@/components/NavDev'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import Link from 'next/link';
-import { FormDataContext } from './FormDataContext';
+import { FormDataContext } from '../components/FormDataContext';
 import { useContext } from 'react';
 import { CartContext } from '@/pages/CartContext';
 import Footer from '@/components/Footer';

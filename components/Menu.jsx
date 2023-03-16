@@ -1,5 +1,5 @@
 import React from 'react';
-import { PizzaArray } from '@/pages/products';
+import { PizzaArray } from '@/components/products';
 import Image from 'next/image';
 import Cart from '@/pages/Cart';
 

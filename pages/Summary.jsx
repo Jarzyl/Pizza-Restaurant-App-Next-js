@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer';
 import { useContext } from 'react';
-import { FormDataContext } from './FormDataContext';
+import { FormDataContext } from '../components/FormDataContext';
 
 
 export default function Summary() {
