@@ -14,24 +14,24 @@ const Navbar = () => {
     setNav(!nav);
   };
   return (
-    <div className="w-full shadow-md shadow-black-300 bg-red-500 fixed top-0 left-0 right-0 z-10 h-12 md:h-16">
-      <div className="justify-between md:justify-evenly flex px-4 mr-5 mx-auto lg:max-w-7xl md:items-center md:px-8 h-10">
+    <div className="w-full shadow-md shadow-black-300 bg-red-500 fixed top-0 left-0 right-0 z-10 h-12 md:h-16 2xl:h-20">
+      <div className="justify-between md:justify-evenly 2xl:justify-around 2xl:mr-20 flex px-4 mr-5 mx-auto lg:max-w-7xl md:items-center md:px-8 h-10">
       <a href='#main'>
-        <h1 className='text-white text-md font-medium md:text-2xl hover:scale-110 duration-200 mt-3 md:mt-5'>Pizza Site</h1></a>
-      <h1 className='hidden md:flex text-white font-medium text-2xl hover:scale-110 duration-200 md:mt-5'>Order Now!<br/> 777-888-999</h1>
-        <Image src={logo} width={70} alt='logo' className="md:mt-5 hover:scale-110 duration-200"/>
+        <h1 className='text-white text-md font-medium md:text-2xl 2xl:text-4xl hover:scale-110 duration-200 mt-3 md:mt-5'>Pizza Site</h1></a>
+      <h1 className='hidden md:flex text-white font-medium text-2xl 2xl:text-3xl 2xl:mt-10 hover:scale-110 duration-200 md:mt-5'>Order Now!<br/> 777-888-999</h1>
+        <Image src={logo} width={70} alt='logo' className="md:mt-5 hover:scale-110 duration-200 2xl:mt-10"/>
         <div>
-          <ul className='hidden md:flex text-white md:mt-5'>
-            <li className='text-sm uppercase hover:scale-110 duration-200'>
+          <ul className='hidden md:flex text-white text-sm md:text-base 2xl:text-xl uppercase md:mt-5 2xl:mt-10'>
+            <li className='hover:scale-110 duration-200'>
             <a href='#main'>Home</a>
             </li>
-            <li className='ml-10 text-sm uppercase hover:scale-110 duration-200'>
+            <li className='ml-10 hover:scale-110 duration-200'>
             <a href='#about'>About</a>
             </li>
-            <li className='ml-10 text-sm uppercase hover:scale-110 duration-200'>
+            <li className='ml-10 hover:scale-110 duration-200'>
             <a href='#menu'>Menu</a>
             </li>
-            <li className='ml-10 text-sm uppercase hover:scale-110 duration-200'>
+            <li className='ml-10 hover:scale-110 duration-200'>
             <a href='#contact'>Contact</a>
             </li>
             {/* <li className='ml-16 hover:scale-110 duration-200'>

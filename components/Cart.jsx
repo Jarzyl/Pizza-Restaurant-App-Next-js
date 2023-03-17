@@ -15,7 +15,7 @@ function Cart(props) {
           <div>
           <h1 className='text-2xl text-red-600'>{product.name}</h1>
           <p className='text-xl text-gray-500'>{product.price}$</p>
-          <p className='text-sm md:text-md mb-2 text-gray-400'>{product.ingredients}</p>
+          <p className='text-sm md:text-md 2xl:text-xl mb-2 text-gray-400'>{product.ingredients}</p>
 
           { productQuantity > 0 ?
                 <>
@@ -26,9 +26,9 @@ function Cart(props) {
                     <button onClick={() => cart.removeOneFromCart(product.id)} className="mx-2">-</button>
                   </div>
                 </div>
-                <button className='my-2 bg-red-500 border-4 border-red-500 rounded-lg hover:scale-110 duration-200' onClick={() => cart.deleteFromCart(product.id)}>Remove from Cart</button>
+                <button className='my-2 bg-red-500 border-4 border-red-500 rounded-lg hover:scale-110 duration-200 2xl:text-xl' onClick={() => cart.deleteFromCart(product.id)}>Remove from Cart</button>
             </>
-              : <button className='my-2 bg-red-500 border-4 border-red-500 rounded-lg hover:scale-110 duration-200' onClick={() => cart.addOneToCart(product.id)}> Add to Cart</button>
+              : <button className='my-2 bg-red-500 border-4 border-red-500 rounded-lg hover:scale-110 duration-200 2xl:text-xl' onClick={() => cart.addOneToCart(product.id)}> Add to Cart</button>
             }
           </div>
 

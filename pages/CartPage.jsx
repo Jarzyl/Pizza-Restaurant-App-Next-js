@@ -38,7 +38,7 @@ export default function CartPage() {
                 </div>
                  <div className="text-center mb-5">
     <a href="https://buy.stripe.com/test_6oEaIz3M5fgqcZW3cc">
-                <button  className=" bg-gray-500 hover:bg-red-500 text-white py-2 px-4 rounded-md mr-2">Enter your delivery details and pay!</button></a>
+                <button  className=" bg-gray-500 hover:bg-red-500 text-white py-2 px-4 rounded-md mr-2">Order a tasty Pizza!</button></a>
                 </div>   
     </section>
     <Footer/>

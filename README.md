@@ -6,4 +6,4 @@ I have also implemented a 3D pizza model on the homepage.
 
 Technology used: React.js, ReactThreeFiber, JavaScript, TailwindCSS, Next.js.
 
-This is part I of the project. In the next one, I plan to add the possibility of ordering online.
+I added the ability to add products to the cart, increase the quantity, reduce the quantity and delete. The user can go to his basket and proceed to payment, where he will also provide delivery details.
