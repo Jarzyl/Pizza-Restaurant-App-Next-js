@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
-import logo from '../public/img/logo.png'
+import logo from '../public/img/logo.png';
 import Modal from './Modal';
 
 const Navbar = () => {

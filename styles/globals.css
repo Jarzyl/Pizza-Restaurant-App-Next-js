@@ -29,3 +29,31 @@ html {
   ::-webkit-scrollbar-thumb:hover {
     background: red;
   }
+
+/* .loader {
+  text-align: center;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+} */
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -9,8 +9,6 @@ function Cart(props) {
 
   const productQuantity = product.id ? cart.getProductQuantity(product.id) : 0;
   
-  // const productQuantity = cart.getProductQuantity(product.id);
-
   return (
     <div className='w-full text-center'>
         <div className=''>

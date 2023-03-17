@@ -9,22 +9,6 @@ export default function Modal() {
 
     const cart = useContext(CartContext);
 
-    const checkout = async () => {
-      await fetch('http://localhost:4000/checkout', {
-          method: "POST",
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({items: cart.items})
-      }).then((response) => {
-          return response.json();
-      }).then((response) => {
-          if(response.url) {
-              window.location.assign(response.url); // Forwarding user to Stripe
-          }
-      });
-  }
-
     const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
 
     const [showModal, setShowModal] = React.useState(false);
@@ -78,10 +62,7 @@ export default function Modal() {
                   </button>
                   <Link href='/CartPage'
                     className=" text-emerald-500  font-bold uppercase text-md px-6 py-3 mr-1 mb-1 hover:scale-110 duration-200"
-                    type="button"
-                    // onClick={checkout}
-                    >
-                    Purchase Pizza!
+                    type="button"> Go to Cart!
                   </Link>
                 </div>
               </div>

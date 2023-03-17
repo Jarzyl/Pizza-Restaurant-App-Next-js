@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import PizzaLoad from './PizzaLoad';
 
 function Main() {
